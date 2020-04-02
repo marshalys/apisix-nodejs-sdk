@@ -3,23 +3,40 @@
   "version": "1.0.0",
   "description": "node sdk for apisix",
   "main": "index.js",
+  "author": "marshalys",
+  "license": "ISC",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "rootDir": "test",
+    "testRegex": ".test.ts$",
+    "testEnvironment": "node"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "rebuild": "rm -rf dist && tsc -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "DOTENV_CONFIG_PATH=./etc/test.env jest --setupFiles dotenv/config"
   },
-  "author": "marshalys",
-  "license": "ISC",
   "dependencies": {
     "got": "^10.7.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.4",
     "@types/lodash": "^4.14.149",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
+    "jest": "^25.2.4",
     "prettier": "^2.0.2",
+    "ts-jest": "^25.3.0",
     "typescript": "^3.8.3"
   }
 }

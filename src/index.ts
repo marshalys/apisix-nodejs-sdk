@@ -57,12 +57,12 @@ class Client {
   private readonly upstreamResource: Resource<UpstreamOption>;
   private readonly sslResource: Resource<SslOption>;
 
-  constructor(baseUrl: string) {
-    this.routeResource = createResource<RouterOption>(baseUrl, 'routes/');
-    this.serviceResource = createResource<ServiceOption>(baseUrl, 'services/');
-    this.consumerResource = createResource<ConsumerOption>(baseUrl, 'consumers/');
-    this.upstreamResource = createResource<UpstreamOption>(baseUrl, 'upstreams/');
-    this.sslResource = createResource<SslOption>(baseUrl, 'ssl/');
+  constructor(baseUrl: string, authKey?: string) {
+    this.routeResource = createResource<RouterOption>(baseUrl, 'routes', authKey);
+    this.serviceResource = createResource<ServiceOption>(baseUrl, 'services', authKey);
+    this.consumerResource = createResource<ConsumerOption>(baseUrl, 'consumers', authKey);
+    this.upstreamResource = createResource<UpstreamOption>(baseUrl, 'upstreams', authKey);
+    this.sslResource = createResource<SslOption>(baseUrl, 'ssl', authKey);
   }
 
   public getRouteResource() {
