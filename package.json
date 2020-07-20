@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "got": "^10.7.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
