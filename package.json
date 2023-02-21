@@ -24,7 +24,7 @@
     "test": "DOTENV_CONFIG_PATH=./etc/test.env jest --setupFiles dotenv/config"
   },
   "dependencies": {
-    "got": "^10.7.0",
+    "got": "^11.8.5",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
